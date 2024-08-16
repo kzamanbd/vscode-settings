@@ -174,4 +174,5 @@
     ],
     "javascript.updateImportsOnFileMove.enabled": "never",
     "typescript.format.semicolons": "insert"
+}
 ```
