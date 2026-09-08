@@ -2,34 +2,31 @@
 
 ```json
 {
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": true,
-        "markdown": true,
-        "scminput": false
-    },
-    "gitlens.advanced.messages": {
-        "suppressGitMissingWarning": true,
-        "suppressLineUncommittedWarning": true
-    },
     "git.autofetch": true,
     "git.confirmSync": false,
-    "git.openRepositoryInParentFolders": "always",
     "git.enableSmartCommit": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
+    "git.openRepositoryInParentFolders": "always",
+    "gitlens.advanced.messages": {
+        "suppressGitMissingWarning": true,
+        "suppressLineUncommittedWarning": true,
+        "suppressIntegrationDisconnectedTooManyFailedRequestsWarning": true
+    },
+    "gitlens.integrations.enabled": false,
+    "diffEditor.wordWrap": "on",
     "diffEditor.renderSideBySide": false,
-    "explorer.confirmPasteNative": false,
     "window.openFoldersInNewWindow": "on",
-    "liveServer.settings.donotShowInfoMsg": true,
+    "window.closeWhenEmpty": true,
+    "window.restoreWindows": "preserve",
+    "window.commandCenter": false,
     "html.format.indentInnerHtml": true,
     "prettier.tabWidth": 4,
-    "editor.insertSpaces": true,
-    "prettier.printWidth": 120,
+    "prettier.printWidth": 100,
     "prettier.singleQuote": true,
     "prettier.trailingComma": "none",
     "prettier.bracketSameLine": true,
     "prettier.vueIndentScriptAndStyle": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
     "editor.tabCompletion": "on",
     "editor.linkedEditing": true,
     "editor.cursorBlinking": "expand",
@@ -43,135 +40,208 @@
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.guides.bracketPairs": "active",
     "editor.largeFileOptimizations": true,
-    "eslint.validate": ["javascript", "javascriptreact", "vue", "vue-html"],
-    "files.autoSave": "onWindowChange",
-    "javascript.format.semicolons": "insert",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "never"
+    },
+    "Laravel.translation.diagnostics": false,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "vue-html"
+    ],
+    "eslint.format.enable": true,
     "notebook.stickyScroll.enabled": true,
     "emmet.triggerExpansionOnTab": true,
     "emmet.includeLanguages": {
         "blade": "html",
         "vue-html": "html",
         "react": "html",
-        "javascript": "html",
-        "blade.php": "html",
-        "twig": "html"
+        "javascript": "html"
     },
-    "workbench.tree.indent": 15,
-    "explorer.confirmDelete": false,
-    "diffEditor.wordWrap": "on",
-    "redhat.telemetry.enabled": true,
-    "workbench.startupEditor": "none",
-    "workbench.sideBar.location": "right",
-    "accessibility.signalOptions.volume": 20,
-    "bladeFormatter.format.indentInnerHtml": true,
+    "workbench.tips.enabled": false,
+    "workbench.activityBar.location": "top",
     "workbench.tree.renderIndentGuides": "always",
-    "workbench.colorTheme": "Andromeda Italic Bordered",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.tree.enableStickyScroll": true,
-    "workbench.colorCustomizations": {
-        "tree.indentGuidesStroke": "#05ef3c",
-        "titleBar.activeBackground": "#026CD1",
-        "titleBar.activeForeground": "#FFFFFF",
-        "editorSuggestWidget.selectedBackground": "#231739",
-        "terminalCursor.foreground": "#C45DFF"
-    },
-    "security.workspace.trust.untrustedFiles": "open",
-    "remote.SSH.remotePlatform": {
-        "203.188.245.58": "linux"
+    "workbench.browser.showInTitleBar": true,
+    "workbench.colorTheme": "Andromeda Italic",
+    "workbench.experimental.share.enabled": true,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "workbench.editor.customLabels.patterns": {
+        "**/{layout,index,loading,error}.vue": "${dirname}/${filename}",
+        "**/{layout,page,loading,error,route}.tsx": "${dirname}/${filename}"
     },
     "explorer.compactFolders": false,
-    "workbench.activityBar.location": "top",
-    "inline-parameters.showPhpDollar": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmPasteNative": false,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, pnpm-workspace.yaml, bun.lockb",
+        "pubspec.yaml": "pubspec.lock,pubspec_overrides.yaml,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
+        "*.dart": "${capture}.g.dart",
+        "composer.json": "composer.lock",
+        "*.php": "${basename}Test.php",
+        "psalm.xml": "psalm-baseline.xml",
+        ".php-cs-fixer.php": ".php-cs-fixer.cache",
+        "phpunit.xml": ".phpunit.result.cache",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*"
+    },
+    "files.autoSave": "onWindowChange",
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        ".php_cs.dist": "php",
+        ".php_cs": "php",
+        "artisan": "php",
+        "phpunit.xml.dist": "xml",
+        ".pre": "php"
+    },
+    "redhat.telemetry.enabled": true,
+    "accessibility.signalOptions.volume": 20,
+    "security.workspace.trust.untrustedFiles": "open",
     "vue.inlayHints.missingProps": true,
     "vue.inlayHints.inlineHandlerLeading": true,
     "vue.inlayHints.optionsWrapper": true,
     "vue.inlayHints.vBindShorthand": true,
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "javascript.inlayHints.parameterNames.enabled": "all",
-    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "javascript.inlayHints.parameterTypes.enabled": true,
-    "javascript.inlayHints.enumMemberValues.enabled": true,
-    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-    "typescript.format.semicolons": "insert",
-    "typescript.inlayHints.parameterNames.enabled": "all",
-    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "typescript.inlayHints.parameterTypes.enabled": true,
-    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "js/ts.updateImportsOnFileMove.enabled": "never",
+    "js/ts.inlayHints.parameterNames.enabled": "all",
+    "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+    "js/ts.inlayHints.parameterTypes.enabled": true,
+    "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+    "js/ts.referencesCodeLens.enabled": true,
+    "js/ts.referencesCodeLens.showOnAllFunctions": true,
+    "js/ts.format.semicolons": "insert",
     "php-docblocker.returnGap": true,
-    "phpfmt.psr2": false,
-    "phpfmt.exclude": ["AllmanStyleBraces", "SpaceAroundParentheses"],
-    "phpfmt.passes": [
-        "AlignDoubleArrow",
-        "AutoSemicolon",
-        "SortUseNameSpace",
-        "SpaceBetweenMethods",
-        "SpaceAroundControlStructures",
-        "GeneratePHPDoc"
-    ],
+    "phpSniffer.run": "never",
     "C_Cpp.formatting": "vcFormat",
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "sameLine",
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "sameLine",
     "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine",
     "[c]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "ms-vscode.cpptools"
     },
     "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "ms-vscode.cpptools"
     },
     "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "laravel.vscode-laravel"
     },
     "[blade]": {
-        "editor.defaultFormatter": "shufo.vscode-blade-formatter",
-        "editor.formatOnSave": true
+        "editor.defaultFormatter": "DEVSENSE.phptools-vscode"
     },
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-        "editor.formatOnSave": true
-    },
     "[shellscript]": {
-        "editor.defaultFormatter": "shakram02.bash-beautify"
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "[dart]": {
         "editor.tabSize": 4,
-        "editor.rulers": [120],
-        "editor.detectIndentation": true,
-        "editor.formatOnType": true,
-        "editor.suggestSelection": "first",
-        "editor.wordBasedSuggestions": "off"
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
     },
-    "cSpell.userWords": ["axios", "kamruzzaman", "kzaman", "kzamanbd", "Nuxt"],
+    "cSpell.userWords": [
+        "axios",
+        "dokan",
+        "draftscripts",
+        "enderror",
+        "endforeach",
+        "endforelse",
+        "forelse",
+        "Inertia",
+        "kamruzzaman",
+        "kzaman",
+        "kzamanbd",
+        "laravel",
+        "livewire",
+        "Nuxt",
+        "paystack",
+        "texty",
+        "vite",
+        "woocommerce"
+    ],
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.default.cStandard": "c11",
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "C_Cpp.default.compilerPath": "/opt/homebrew/bin/g++-15",
+    "C_Cpp.default.intelliSenseMode": "macos-gcc-arm64",
     "code-runner.terminalRoot": "/",
     "code-runner.saveFileBeforeRun": true,
     "code-runner.clearPreviousOutput": true,
     "code-runner.showExecutionMessage": false,
-    "code-runner.executorMapByGlob": {
-        "pom.xml": "cd $dir && mvn clean package"
-    },
     "code-runner.executorMap": {
         "php": "php",
         "javascript": "node",
-        "python": "python -u",
+        "python": "python3",
         "go": "go run",
-        "powershell": "powershell -ExecutionPolicy ByPass -File",
-        "bat": "cmd /c",
-        "shellscript": "bash",
         "typescript": "ts-node",
-        "swift": "swift",
         "dart": "dart",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt.exe && $dir$fileNameWithoutExt.exe < input.txt",
         "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.exe && $dir$fileNameWithoutExt.exe < input.txt"
     },
+    "security.workspace.trust.banner": "always",
+    "security.promptForLocalFileProtocolHandling": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "**/.dart_tool": true,
+        "_ide_helper.php": true,
+        "_ide_helper_models.php": true,
+        ".php_cs.cache": true,
+        ".phpstorm.meta.php": true,
+        ".phpunit.result.cache": true
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "chat.mcp.gallery.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "dart.debugExternalPackageLibraries": true,
+    "dart.debugSdkLibraries": true,
+    "git.replaceTagsWhenPull": true,
+    "chat.instructionsFilesLocations": {
+        ".github/instructions": true,
+        ".claude/rules": true,
+        "~/.copilot/instructions": true,
+        "~/.claude/rules": true
+    },
+    "chat.tips.enabled": false,
+    "gitlens.ai.model": "anthropic:claude-opus-4-8",
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
+    "terminal.integrated.mouseWheelScrollSensitivity": 3,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "terminal.integrated.gpuAcceleration": "off",
+    "terminal.external.osxExec": "Warp.app",
+    "chat.viewSessions.orientation": "stacked",
+    "claudeCode.preferredLocation": "panel"
     "psi-header.templates": [
         {
             "language": "*",
@@ -198,7 +268,6 @@
         }
     ],
     "apc.menubar.compact": true,
-    "workbench.tips.enabled": false,
     "apc.stylesheet": {
         ".composite.title h2::before": "content: '💻🚀'; margin-right: 6px;",
         ".quick-input-widget.show-file-icons, .editor-widget.find-widget": "box-shadow: none !important",
@@ -271,35 +340,6 @@
             "background-size": "contain !important;",
             "width": "60% !important;"
         }
-    },
-    "explorer.fileNesting.patterns": {
-        "*.ts": "${capture}.js",
-        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-        "*.jsx": "${capture}.js",
-        "*.tsx": "${capture}.ts",
-        "tsconfig.json": "tsconfig.*.json",
-        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-        "composer.json": "composer.lock",
-        "psalm.xml": "psalm-baseline.xml",
-        ".php-cs-fixer.php": ".php-cs-fixer.cache",
-        "phpunit.xml": ".phpunit.result.cache",
-        "*.php": "${basename}Test.php"
-    },
-    "files.associations": {
-        ".php_cs.dist": "php",
-        ".php_cs": "php",
-        ".pre": "php",
-        "artisan": "php"
-    },
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/*.code-search": true,
-        "_ide_helper.php": true,
-        "_ide_helper_models.php": true,
-        ".php_cs.cache": true,
-        ".phpstorm.meta.php": true,
-        ".phpunit.result.cache": true
     },
 }
 ```
